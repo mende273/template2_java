@@ -1,20 +1,20 @@
 package com.jumrukovski.template2.data.model;
 
 
-import com.google.gson.annotations.SerializedName;
+import com.squareup.moshi.Json;
 
 public class Result<T> {
 
-    @SerializedName("page")
+    @Json(name = "page")
     private int page;
 
-    @SerializedName("total_results")
+    @Json(name = "total_results")
     private int totalResults;
 
-    @SerializedName("total_pages")
+    @Json(name = "total_pages")
     private int totalPages;
 
-    @SerializedName("results")
+    @Json(name = "results")
     private T results;
 
     public int getPage() {
@@ -31,15 +31,5 @@ public class Result<T> {
 
     public T getResults() {
         return results;
-    }
-
-    @Override
-    public String toString() {
-        return "Result{" +
-                "page=" + page +
-                ", totalResults=" + totalResults +
-                ", totalPages=" + totalPages +
-                ", results=" + results +
-                '}';
     }
 }

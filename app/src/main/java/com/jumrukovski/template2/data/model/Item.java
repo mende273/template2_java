@@ -1,49 +1,49 @@
 package com.jumrukovski.template2.data.model;
 
 
-import com.google.gson.annotations.SerializedName;
+import com.squareup.moshi.Json;
 
 import java.util.List;
 
 public class Item {
 
-    @SerializedName("original_name")
+    @Json(name = "original_name")
     private String originalName;
 
-    @SerializedName("name")
+    @Json(name = "name")
     private String name;
 
-    @SerializedName("popularity")
+    @Json(name = "popularity")
     private float popularity;
 
-    @SerializedName("vote_count")
+    @Json(name = "vote_count")
     private long voteCount;
 
-    @SerializedName("first_air_date")
+    @Json(name = "first_air_date")
     private String firstAirDate;
 
-    @SerializedName("backdrop_path")
+    @Json(name = "backdrop_path")
     private String backDropPath;
 
-    @SerializedName("original_language")
+    @Json(name = "original_language")
     private String originalLanguage;
 
-    @SerializedName("id")
+    @Json(name = "id")
     private long id;
 
-    @SerializedName("vote_average")
+    @Json(name = "vote_average")
     private float voteAverage;
 
-    @SerializedName("overview")
+    @Json(name = "overview")
     private String overview;
 
-    @SerializedName("poster_path")
+    @Json(name = "poster_path")
     private String posterPath;
 
-    @SerializedName("genre_ids")
+    @Json(name = "genre_ids")
     private List<Integer> getnreIds;
 
-    @SerializedName("origin_country")
+    @Json(name = "origin_country")
     private List<String> originCountry;
 
     public String getOriginalName() {
@@ -96,24 +96,5 @@ public class Item {
 
     public List<String> getOriginCountry() {
         return originCountry;
-    }
-
-    @Override
-    public String toString() {
-        return "Item{" +
-                "originalName='" + originalName + '\'' +
-                ", name='" + name + '\'' +
-                ", popularity=" + popularity +
-                ", voteCount=" + voteCount +
-                ", firstAirDate='" + firstAirDate + '\'' +
-                ", backDropPath='" + backDropPath + '\'' +
-                ", originalLanguage='" + originalLanguage + '\'' +
-                ", id=" + id +
-                ", voteAverage=" + voteAverage +
-                ", overview='" + overview + '\'' +
-                ", posterPath='" + posterPath + '\'' +
-                ", getnreIds=" + getnreIds +
-                ", originCountry=" + originCountry +
-                '}';
     }
 }

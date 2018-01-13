@@ -46,6 +46,8 @@ dependencies {
     def rxJava2Version = '2.0.1'
     def rxJava2Adapter = '2.2.0'
     def glideVersion = '3.8.0'
+    def moshiVersion = '1.4.0'
+    def moshiConverted = '2.3.0'
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:26.1.0'
@@ -66,15 +68,16 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:$retrofitVersion") {
         exclude module: 'okhttp'
     }
-    implementation("com.squareup.retrofit2:adapter-rxjava2:$rxJava2Adapter"){
-        exclude module: 'okhttp'
-    }
-    implementation("com.squareup.retrofit2:converter-gson:$retrofitVersion") {
+    implementation("com.squareup.retrofit2:adapter-rxjava2:$rxJava2Adapter") {
         exclude module: 'okhttp'
     }
     implementation("com.squareup.okhttp3:logging-interceptor:$okHttpVersion") {
         exclude module: 'okhttp'
     }
+
+    // moshi
+    implementation "com.squareup.moshi:moshi:$moshiVersion"
+    implementation "com.squareup.retrofit2:converter-moshi:$moshiConverted"
 
     // rxJava 2
     implementation "io.reactivex.rxjava2:rxjava:$rxJava2Version"
