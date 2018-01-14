@@ -5,7 +5,6 @@ import android.databinding.ViewDataBinding;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
-import com.bumptech.glide.Glide;
 import com.jumrukovski.template2.base.BaseBindingAdapter;
 import com.jumrukovski.template2.base.BaseBindingViewHolder;
 import com.jumrukovski.template2.data.model.Item;
@@ -36,7 +35,7 @@ public class ShowAdapter extends BaseBindingAdapter<Item> {
         binding.title.setText(item.getOriginalName());
         binding.description.setText(item.getOverview());
 
-        Glide.with(context)
+        GlideApp.with(context)
                 .load("http://image.tmdb.org/t/p/w150" + item.getPosterPath())
                 .into(binding.thumb);
     }
